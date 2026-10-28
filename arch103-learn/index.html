@@ -1,0 +1,718 @@
+<title>ARCH 103 Exam 2 Lessons</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Every topic on ARCH 103 Exam 2 taught in plain language, with how each one can come up as multiple choice and as a short answer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · shape: Long Document with a contents rail · genre: editorial · theme: Almanac (deal 2/3, seed long-teaching-document-arch-543d·cf73b730·2026-10-28·r0) · job: study (read, then check yourself)
+ * hero: Banner · nav: edge-aligned, a wordmark and one link · footer: colophon · imagery: none; two diagrams of real systems (a stratified section, a seriation curve) and ruled sheets · signature: the "On the test" sheet closing every lesson, the multiple-choice angle, the short answer and the sentence to write
+ * axes: mid/grotesk-sans/chromatic-magenta · posture: restrained · contrast: pass · fold: pass · copy: verbatim · v2.0.0
+ * copy: verbatim because the user asked to be taught everything on the exam; all content comes from the ARCH 103 Exam #2 Study Guide doc */
+/* Hallmark · dismissed 77 · the page is one Long Document: seven lessons sit inside a single article column, each with a ruled sheet or diagram for mass */
+/* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V4 · weakest: H, a long teaching page risks one grey slab; each lesson closes on the sheet, and diagrams break the prose where the idea is spatial */
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.9375rem; --text-md: 1.125rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display: clamp(2.5rem, 4vw + 1rem, 4.5rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.25rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.5rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-micro: 120ms; --dur-short: 220ms;
+  --container: 1360px; --gutter: 64px; --gap-columns: 32px; --section-gap: 144px; --section-gap-s: 120px;
+  --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400;
+  --color-paper: oklch(84% 0.012 245); --color-paper-2: oklch(81% 0.012 245); --color-paper-3: oklch(77% 0.012 245);
+  --color-ink: oklch(16% 0.020 245); --color-ink-2: oklch(24% 0.018 245); --color-muted: oklch(34% 0.016 245);
+  --color-rule: oklch(73% 0.013 240); --color-rule-2: oklch(32% 0.018 240);
+  --color-accent: oklch(45% 0.180 350); --color-accent-2: oklch(37% 0.160 350); --color-accent-ink: oklch(97% 0.006 245); --color-focus: oklch(46% 0.190 350);
+  --color-sheet: oklch(93.5% 0.008 245);
+  --color-layer-1: oklch(88% 0.012 245); --color-layer-2: oklch(80% 0.016 245); --color-layer-3: oklch(72% 0.018 245); --color-layer-4: oklch(63% 0.02 245);
+  --font-display: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-outlier: "IBM Plex Mono", ui-monospace, monospace;
+  --radius-pill: 2px; --rule-hair: 1px; --rule-bar: 2px;
+  --tracking-display: -0.02em; --display-weight: 600;
+  --nav-h: 64px;
+}
+
+/* base (from the scaffold) */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { scrollbar-color: var(--color-muted) var(--color-paper); scroll-padding-top: calc(var(--nav-h) + var(--space-lg)); }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink-2); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.6; -webkit-font-smoothing: antialiased; font-optical-sizing: auto; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: var(--z-modal); background: var(--color-paper); }
+::selection { background: var(--color-accent); color: var(--color-accent-ink); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+a { color: var(--color-ink); text-decoration-color: var(--color-accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-synthesis: none; letter-spacing: var(--tracking-display); line-height: 1.05; color: var(--color-ink); overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+h1 { max-width: 18ch; font-size: var(--text-display); letter-spacing: -0.035em; line-height: 0.98; }
+h2 { max-width: 22ch; font-size: var(--text-section); }
+h3 { max-width: 40ch; font-size: var(--text-title); line-height: 1.2; }
+p { margin: 0; text-wrap: pretty; max-width: 60ch; }
+ul, ol { margin: 0; padding-left: var(--space-lg); }
+li + li { margin-top: var(--space-xs); }
+b, strong { font-weight: 500; color: var(--color-ink); }
+em { font-style: italic; }
+[hidden] { display: none !important; }
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+.num { font-family: var(--font-outlier); font-variant-numeric: tabular-nums; }
+.skip { position: absolute; left: var(--space-md); top: calc(-1 * var(--space-3xl)); z-index: var(--z-modal); padding: var(--space-xs) var(--space-md); background: var(--color-ink); color: var(--color-paper); }
+.skip:focus-visible { top: var(--space-md); }
+@media (max-width: 60rem) { :root { --gutter: 24px; --section-gap: 96px; --section-gap-s: 80px; } }
+@media (max-width: 40rem) { :root { --gutter: 16px; --section-gap: 72px; --section-gap-s: 56px; --gap-columns: 16px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+
+/* controls */
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 var(--space-lg); border: var(--rule-hair) solid var(--color-ink); border-radius: var(--radius-pill); background: transparent; color: var(--color-ink); font: 500 var(--text-sm)/1 var(--font-display); text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out); }
+.btn:hover { background: var(--color-paper-2); }
+.btn:active { background: var(--color-paper-3); }
+.btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn--primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+.btn--primary:hover { background: var(--color-accent-2); }
+.btn--primary:active { background: var(--color-accent); }
+
+/* nav: edge-aligned */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: var(--z-sticky-nav); height: var(--nav-h); display: flex; align-items: center; background: var(--color-paper); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.bar .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); }
+.wordmark { font: 600 var(--text-md)/1 var(--font-display); letter-spacing: var(--tracking-display); text-decoration: none; white-space: nowrap; }
+.bar a:not(.wordmark) { font: 500 var(--text-sm)/1 var(--font-display); white-space: nowrap; }
+
+/* hero: Banner */
+.hero { min-height: 56dvh; display: grid; align-content: center; padding-block: var(--space-2xl); }
+.hero__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-3xl); align-items: end; }
+.hero__text { display: grid; gap: var(--space-lg); justify-items: start; }
+.lede { font-size: var(--text-lead); line-height: 1.45; max-width: 46ch; color: var(--color-ink-2); }
+.hero .row { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+
+/* the exam sheet */
+.sheet { background: var(--color-sheet); border-top: var(--rule-bar) solid var(--color-ink); padding: var(--space-lg) var(--space-lg) var(--space-md); }
+.sheet__title { font: 600 var(--text-lg)/1.2 var(--font-display); letter-spacing: var(--tracking-display); color: var(--color-ink); margin-bottom: var(--space-sm); }
+table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); line-height: 1.45; }
+th { font: 500 var(--text-sm)/1.3 var(--font-body); color: var(--color-muted); text-align: left; padding: 0 var(--space-md) var(--space-xs) 0; border-bottom: var(--rule-bar) solid var(--color-rule-2); vertical-align: bottom; }
+td { padding: var(--space-sm) var(--space-md) var(--space-sm) 0; border-top: var(--rule-hair) solid var(--color-rule); vertical-align: top; color: var(--color-ink-2); }
+tbody tr:first-child td { border-top: 0; }
+td:first-child { color: var(--color-ink); font-weight: 500; }
+td.num, th.num { text-align: right; white-space: nowrap; }
+tr.is-key td { color: var(--color-accent-2); }
+tr.is-key td:first-child { color: var(--color-accent-2); }
+.table-wrap { overflow-x: auto; }
+
+/* body: contents rail and lessons */
+.page { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: var(--space-2xl); align-items: start; padding-top: var(--space-2xl); }
+.rail { position: sticky; top: calc(var(--nav-h) + var(--space-xl)); }
+.rail p { font: 500 var(--text-sm)/1.3 var(--font-body); color: var(--color-muted); margin-bottom: var(--space-sm); }
+.rail ol { list-style: none; padding: 0; border-left: var(--rule-hair) solid var(--color-rule-2); }
+.rail li + li { margin-top: 0; }
+.rail a { display: block; white-space: nowrap; padding: var(--space-xs) 0 var(--space-xs) var(--space-md); font: 500 var(--text-sm)/1.3 var(--font-display); color: var(--color-ink-2); text-decoration: none; margin-left: calc(-1 * var(--rule-hair)); border-left: var(--rule-bar) solid transparent; transition: color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out); }
+.rail a:hover { color: var(--color-ink); }
+.rail a[aria-current="true"] { color: var(--color-ink); border-left-color: var(--color-accent); }
+.lessons { display: grid; gap: var(--section-gap); min-width: 0; }
+.lesson { display: grid; gap: var(--space-xl); }
+.lesson__head { display: grid; gap: var(--space-md); padding-bottom: var(--space-lg); border-bottom: var(--rule-bar) solid var(--color-rule-2); }
+.lesson__head p { font-size: var(--text-lead); line-height: 1.45; max-width: 52ch; }
+.prose { display: grid; gap: var(--space-md); max-width: 62ch; }
+.prose h3 { margin-top: var(--space-lg); }
+.prose h3:first-child { margin-top: 0; }
+.pull { font-size: var(--text-lead); line-height: 1.45; padding-left: var(--space-lg); border-left: var(--rule-bar) solid var(--color-accent); color: var(--color-ink); max-width: 56ch; }
+
+/* figures */
+figure { margin: 0; display: grid; gap: var(--space-sm); }
+figcaption { font-size: var(--text-sm); color: var(--color-muted); max-width: 70ch; }
+.diagram { width: 100%; height: auto; background: var(--color-sheet); border-top: var(--rule-bar) solid var(--color-ink); }
+.diagram text { font-family: var(--font-body); font-size: 15px; fill: var(--color-ink); }
+.diagram .lbl-s { font-size: 13px; fill: var(--color-muted); }
+.diagram .lbl-b { font-family: var(--font-display); font-weight: 600; font-size: 15px; }
+.diagram .l1 { fill: var(--color-layer-1); } .diagram .l2 { fill: var(--color-layer-2); } .diagram .l3 { fill: var(--color-layer-3); } .diagram .l4 { fill: var(--color-layer-4); }
+.diagram .edge { fill: none; stroke: var(--color-rule-2); stroke-width: 1; }
+.diagram .pit { fill: var(--color-paper-3); stroke: var(--color-ink); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.diagram .mark { fill: var(--color-accent); }
+.diagram .link { fill: none; stroke: var(--color-accent); stroke-width: 2; }
+.diagram .spindle { fill: var(--color-accent); fill-opacity: 0.85; }
+.diagram .spindle-2 { fill: var(--color-ink-2); }
+.diagram .axis { stroke: var(--color-ink); stroke-width: 1; fill: none; }
+.diagram .grid { stroke: var(--color-rule); stroke-width: 1; }
+
+/* on the test: the signature */
+.test { background: var(--color-sheet); border-top: var(--rule-bar) solid var(--color-ink); padding: var(--space-lg); display: grid; gap: var(--space-lg); }
+.test__title { font: 600 var(--text-xl)/1.1 var(--font-display); letter-spacing: var(--tracking-display); color: var(--color-ink); }
+.test dl { margin: 0; display: grid; gap: 0; }
+.test dl > div { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: var(--gap-columns); padding-block: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); }
+.test dl > div:first-child { border-top: 0; padding-top: 0; }
+.test dt { font: 600 var(--text-md)/1.3 var(--font-display); color: var(--color-ink); }
+.test dd { margin: 0; display: grid; gap: var(--space-xs); }
+.test dd ul { padding-left: var(--space-md); }
+.say { font-style: italic; color: var(--color-ink); }
+
+/* check yourself */
+.checkq { display: grid; gap: 0; }
+.checkq h3 { margin-bottom: var(--space-sm); }
+details { border-top: var(--rule-hair) solid var(--color-rule-2); }
+details:last-child { border-bottom: var(--rule-hair) solid var(--color-rule-2); }
+summary { display: flex; justify-content: space-between; gap: var(--space-md); align-items: baseline; min-height: 48px; padding: var(--space-sm) 0; cursor: pointer; list-style: none; color: var(--color-ink); font-weight: 500; transition: background-color var(--dur-short) var(--ease-out); }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "Show answer"; flex-shrink: 0; font: 500 var(--text-xs)/1 var(--font-display); color: var(--color-accent-2); text-decoration: underline; text-underline-offset: 0.2em; }
+details[open] summary::after { content: "Hide"; }
+summary:hover { background: var(--color-paper-2); }
+summary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+details > p { padding: 0 0 var(--space-md); max-width: 60ch; }
+
+/* glossary */
+.gloss td:nth-child(3) { white-space: nowrap; font-family: var(--font-outlier); font-variant-numeric: tabular-nums; }
+
+/* closing band: ink */
+.band { background: var(--color-ink); color: var(--color-paper); padding-block: var(--section-gap-s); margin-top: var(--section-gap); }
+.band h2 { color: var(--color-sheet); }
+.band__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); }
+.band ol { display: grid; gap: var(--space-sm); padding-left: var(--space-lg); color: var(--color-sheet); }
+.band li + li { margin-top: 0; }
+.band b { color: var(--color-sheet); }
+.band a { color: var(--color-sheet); }
+.band .btn { border-color: var(--color-sheet); color: var(--color-sheet); margin-top: var(--space-lg); }
+.band .btn:hover { background: var(--color-ink-2); }
+.foot { padding-block: var(--space-xl); }
+.foot p { font-size: var(--text-sm); color: var(--color-muted); max-width: 70ch; }
+
+@media (max-width: 60rem) {
+  .hero__grid, .page, .band__grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  .rail { position: static; }
+  .rail ol { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-md); border-left: 0; }
+  .rail a { padding: var(--space-xs) 0; border-left: 0; margin-left: 0; }
+  .test dl > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xs); }
+  .hero { min-height: 0; }
+}
+</style>
+<script>document.documentElement.classList.add('js'); document.documentElement.lang = 'en';</script>
+
+<a class="skip" href="#lessons">Skip to the lessons</a>
+<header class="bar">
+  <div class="container">
+    <a class="wordmark" href="#top">ARCH 103, Exam 2 lessons</a>
+    <a href="https://claude.ai/artifact/2wgESJzR7rriVmhNdctqJN" rel="noopener">Practice lab</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <h1 id="hero-title">Everything on Exam 2, taught plainly</h1>
+        <p class="lede">Five lessons from your study guide, each ending with how it can show up on the test.</p>
+        <div class="row">
+          <a class="btn btn--primary" href="#lesson-1">Start with lesson 1</a>
+          <a class="btn" href="#exam">How the exam works</a>
+        </div>
+      </div>
+      <div class="sheet" id="exam">
+        <p class="sheet__title">How the exam works, Thursday, Oct. 29</p>
+        <table>
+          <thead><tr><th scope="col">Part</th><th scope="col">Format</th><th scope="col" class="num">Points</th></tr></thead>
+          <tbody>
+            <tr><td>Multiple choice</td><td>Facts, terms and dates; plus 2 extra-credit questions</td><td class="num">2 each</td></tr>
+            <tr class="is-key"><td>Short answers</td><td>Pick 5 of 11 questions. Half the grade</td><td class="num">10 each</td></tr>
+            <tr><td>Your target</td><td>Master 6 or 7 short answers and you are safe</td><td class="num"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="container page">
+    <nav class="rail" aria-label="Lessons">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#how-to-answer">The A answer</a></li>
+        <li><a href="#lesson-1">1. Dating and chronology</a></li>
+        <li><a href="#lesson-2">2. Classification</a></li>
+        <li><a href="#lesson-3">3. Objects to behavior</a></li>
+        <li><a href="#lesson-4">4. Heritage law</a></li>
+        <li><a href="#lesson-5">5. Looting ethics</a></li>
+        <li><a href="#glossary">All 26 terms</a></li>
+      </ol>
+    </nav>
+
+    <div class="lessons" id="lessons">
+
+      <!-- HOW TO ANSWER -->
+      <section class="lesson" id="how-to-answer" aria-labelledby="h-how">
+        <div class="lesson__head">
+          <h2 id="h-how">How to write an A answer</h2>
+          <p>Before the content, the method. Every short answer is graded the same way.</p>
+        </div>
+        <div class="prose">
+          <p>Prof. Navarro-Farr says an A answer <b>uses proper terms, defines them, gives examples, and is explicit</b>. “Explicit” is the word to remember: she won’t infer anything, so a step you skip is a point you lose. Build every answer from four moves:</p>
+          <ol>
+            <li><b>Define.</b> Open with the key term and a one-sentence definition.</li>
+            <li><b>Explain.</b> Say how it works or why it matters, step by step.</li>
+            <li><b>Example.</b> A specific case from lecture, slides, the reading or class activities: blue jeans, atlatls, CWAM, the film.</li>
+            <li><b>Connect.</b> End with one sentence tying it to a bigger theme: context, chronology or stewardship.</li>
+          </ol>
+          <p>Five themes run through the whole course. Ending on one makes your answers sound connected:</p>
+        </div>
+        <div class="sheet table-wrap">
+          <table>
+            <thead><tr><th scope="col">Theme</th><th scope="col">In one line</th><th scope="col">Use it in</th></tr></thead>
+            <tbody>
+              <tr><td>Context is everything</td><td>An artifact’s meaning comes from where it was found and what it was found with.</td><td class="num">Q1 Q4 Q10 Q11</td></tr>
+              <tr><td>Time is built two ways</td><td>Put things in order (relative) and assign years (absolute); the best answers use both.</td><td class="num">Q1 Q3 Q4 Q6</td></tr>
+              <tr><td>Classification turns objects into data</td><td>Attributes build types, types build typologies, typologies date and compare sites.</td><td class="num">Q2 Q3 Q5</td></tr>
+              <tr><td>Observations need bridges</td><td>We see static objects today; experiments and close looking connect them to past behavior.</td><td class="num">Q7</td></tr>
+              <tr><td>Who owns the past?</td><td>From “finders keepers” to stewardship, laws and partnership with descendant communities.</td><td class="num">Q8 Q9 Q10 Q11</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- LESSON 1 -->
+      <section class="lesson" id="lesson-1" aria-labelledby="h-1">
+        <div class="lesson__head">
+          <h2 id="h-1">Lesson 1. Dating and chronology</h2>
+          <p>Archaeologists answer “when?” in two ways: by putting things in order, and by giving an age in years. Covers Q1, Q4 and Q6 (week 6, DTE Ch. 5).</p>
+        </div>
+        <div class="prose">
+          <h3>Relative dating: putting things in order</h3>
+          <p><b>Relative dating</b> tells you whether something is <em>older or younger</em> than something else. It gives an order, never a number of years. It rests on two keys.</p>
+          <p><b>Key 1, the law of superposition.</b> In undisturbed deposits, lower layers were laid down first, so they are older than the layers above. Nicolaus Steno first stated it in 1669, for geology. Think of a laundry pile: the shirt at the bottom went in first. The study of these layers (strata) is <b>stratigraphy</b>.</p>
+          <p><b>Key 2, the index fossil concept.</b> Layers that contain the same distinctive fossils or artifacts are about the same age, even at different sites. The geologist William Smith noticed this with fossils. Archaeologists use artifacts the same way: a projectile point style made for only a short time is a <b>time-marker</b> (or index artifact).</p>
+          <p class="pull">Superposition orders layers within one site. Index artifacts link layers between sites. Together they build a regional sequence.</p>
+        </div>
+        <figure>
+          <svg class="diagram" viewBox="0 0 880 404" role="img" aria-labelledby="d1-t d1-d">
+            <title id="d1-t">Diagram of two stratified sites</title>
+            <desc id="d1-d">Two sites, A and B, each with four layers. Layer 1 at the top is youngest and layer 4 at the bottom is oldest. A pit at site A cuts down through layers 1 and 2 into layer 3, so the pit is younger than those layers. The same point style appears in layer 3 at site A and layer 2 at site B, linking those layers as the same age.</desc>
+            <text x="40" y="36" class="lbl-b">Site A</text>
+            <text x="500" y="36" class="lbl-b">Site B</text>
+            <rect class="l1" x="40" y="52" width="340" height="66"/><rect class="l2" x="40" y="118" width="340" height="66"/><rect class="l3" x="40" y="184" width="340" height="66"/><rect class="l4" x="40" y="250" width="340" height="66"/>
+            <rect class="edge" x="40" y="52" width="340" height="264"/>
+            <path class="pit" d="M210 52 L300 52 L288 120 L276 214 L230 214 L220 120 Z"/>
+            <text x="56" y="90">1</text><text x="56" y="156">2</text><text x="56" y="222">3</text><text x="56" y="288">4</text>
+            <text x="234" y="78" class="lbl-s">pit</text>
+            <rect class="mark" x="140" y="210" width="18" height="18" transform="rotate(45 149 219)"/>
+            <rect class="l1" x="500" y="52" width="340" height="88"/><rect class="l2" x="500" y="140" width="340" height="88"/><rect class="l3" x="500" y="228" width="340" height="88"/>
+            <rect class="edge" x="500" y="52" width="340" height="264"/>
+            <text x="516" y="100">1</text><text x="516" y="188">2</text><text x="516" y="276">3</text>
+            <rect class="mark" x="660" y="176" width="18" height="18" transform="rotate(45 669 185)"/>
+            <path class="link" d="M164 219 C 300 280, 520 250, 652 188"/>
+            <text x="40" y="346" class="lbl-s">Top: youngest. Bottom: oldest (superposition).</text>
+            <text x="40" y="390" class="lbl-s">than them (cross-cutting relationships).</text>
+            <text x="40" y="368" class="lbl-s">The pit cuts layers 1 and 2, so it is younger</text>
+            <text x="500" y="346" class="lbl-s">The same point style (a time-marker) links</text>
+            <text x="500" y="368" class="lbl-s">A’s layer 3 with B’s layer 2: about the same age.</text>
+          </svg>
+          <figcaption>Both keys at work, plus the caution. A layer number is only an order: it says nothing about years.</figcaption>
+        </figure>
+        <div class="prose">
+          <p><b>The caution that shows depth.</b> Superposition only works if layers aren’t disturbed. Burrowing animals, pits dug by later people or erosion can mix them, so archaeologists check before trusting the sequence. Add the <b>law of cross-cutting relationships</b>: a pit or feature that cuts through a layer is younger than that layer.</p>
+          <p>Two more terms tie layers to dates. <b>Terminus post quem</b>, “date after which”: a layer can’t be older than the newest thing in it. <b>Terminus ante quem</b>, “date before which”: a layer sealed below something datable is older than it. And <b>in situ</b> means “in place”, still where it was originally left.</p>
+
+          <h3>Absolute dating: assigning years</h3>
+          <p><b>Absolute</b> (or <b>chronometric</b>) dating tells you how many years old something is, usually as a range with a ± sign. The methods to know:</p>
+          <ul>
+            <li><b>Radiocarbon (C-14).</b> Living things absorb carbon-14. When they die it decays at a known rate, with a <b>half-life</b> of about 5,730 years, so measuring what’s left tells how long ago the organism died. Works on organic material up to about 50,000 years old.</li>
+            <li><b>Dendrochronology.</b> Counting and matching annual tree rings; can be accurate to the exact year.</li>
+            <li><b>Potassium-argon.</b> Dates volcanic rock, for very old sites (millions of years), like early human sites in East Africa.</li>
+            <li><b>Thermoluminescence.</b> Measures energy trapped in heated objects like pottery since they were last fired.</li>
+            <li>Also: <b>obsidian hydration</b> and <b>historical records</b>.</li>
+          </ul>
+
+          <h3>Why radiocarbon dates go wrong</h3>
+          <p>Q4 asks for two problems. Learn the first two well; the rest are backups.</p>
+        </div>
+        <div class="sheet table-wrap">
+          <table>
+            <thead><tr><th scope="col">Problem</th><th scope="col">What goes wrong</th><th scope="col">The fix</th></tr></thead>
+            <tbody>
+              <tr class="is-key"><td>Contamination</td><td>Modern or ancient carbon mixes into the sample (roots, groundwater, handling) and skews the date</td><td>Careful collection; chemical pretreatment in the lab</td></tr>
+              <tr class="is-key"><td>Changing atmospheric C-14</td><td>The method assumed C-14 levels were constant; they weren’t, so raw dates are off</td><td><b>Calibration</b> against tree rings (dendrochronology) converts to calendar years</td></tr>
+              <tr><td>Old wood</td><td>Wood may be much older than the event (inner rings, a reused beam)</td><td>Date short-lived seeds or twigs</td></tr>
+              <tr><td>Association</td><td>The sample may not relate to the event you want to date</td><td>Use samples tied to the feature, like charcoal from the hearth itself</td></tr>
+              <tr><td>Reservoir effect</td><td>Ocean or lake carbon is “older”, so shellfish or fish date too old</td><td>Apply a local correction</td></tr>
+              <tr><td>Statistical range</td><td>Every date is a probability range (2,000 ± 50 years), not an exact year</td><td>Report ranges; use several dates</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="prose">
+          <h3>Relative vs. absolute, side by side</h3>
+        </div>
+        <div class="sheet table-wrap">
+          <table>
+            <thead><tr><th scope="col"></th><th scope="col">Relative</th><th scope="col">Absolute (chronometric)</th></tr></thead>
+            <tbody>
+              <tr><td>Answers</td><td>Is A older or younger than B?</td><td>How many years old is it?</td></tr>
+              <tr><td>Output</td><td>An order or sequence</td><td>A date or date range (often ±)</td></tr>
+              <tr><td>Examples</td><td>Superposition, index artifacts, seriation, cross-dating, cross-cutting relationships</td><td>Radiocarbon, dendrochronology, potassium-argon, thermoluminescence, obsidian hydration, historical records</td></tr>
+              <tr><td>Strength</td><td>Cheap, quick, works on almost anything</td><td>Real years you can compare worldwide</td></tr>
+              <tr><td>Weakness</td><td>No calendar years</td><td>Costly, needs specific materials, has error ranges</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="test" aria-labelledby="t-1">
+          <p class="test__title" id="t-1">On the test: Lesson 1</p>
+          <dl>
+            <div><dt>Multiple choice could ask</dt><dd><ul>
+              <li>Which principle says lower layers are older? <b>Superposition</b>. Trap: <b>cross-cutting</b> is about pits cutting layers.</li>
+              <li>Who goes with what: <b>Steno</b> is superposition (1669); <b>William Smith</b> is index fossils.</li>
+              <li>Relative or absolute? <b>Seriation</b> is relative, even though it feels like dating.</li>
+              <li>Numbers that get swapped: <b>5,730 years</b> is the half-life; <b>about 50,000 years</b> is the range.</li>
+              <li>Post vs. ante: <b>post quem</b> is “after which” (newest thing inside); <b>ante quem</b> is “before which” (sealed below).</li>
+            </ul></dd></div>
+            <div><dt>Short answer Q1</dt><dd><p>The two keys of relative dating. Define relative dating, explain superposition with a stratified site, explain index fossils with a point style, then the disturbance caution, and end on context.</p></dd></div>
+            <div><dt>Short answer Q4</dt><dd><p>Two radiocarbon problems. One-sentence setup (half-life 5,730 years), then contamination and calibration, each with what goes wrong and the fix.</p></dd></div>
+            <div><dt>Short answer Q6</dt><dd><p>Relative vs. absolute. Define both, two examples each, strengths and weaknesses, then the sentence below.</p></dd></div>
+            <div><dt>A sentence to write</dt><dd><p class="say">“Relative and absolute methods are strongest when combined: superposition orders the layers, and a radiocarbon date from one layer anchors the whole sequence in calendar years.”</p></dd></div>
+          </dl>
+        </div>
+        <div class="checkq">
+          <h3>Check yourself</h3>
+          <details><summary>A pit cuts through layers 1 and 2. Is the pit older or younger than layer 2?</summary><p>Younger. By the law of cross-cutting relationships, whatever cuts through a layer came after it.</p></details>
+          <details><summary>Why can’t you date a 100,000-year-old site with radiocarbon?</summary><p>Radiocarbon only works up to about 50,000 years. For very old sites on volcanic rock, potassium-argon is used.</p></details>
+          <details><summary>What problem does calibration fix?</summary><p>Atmospheric carbon-14 levels changed over time, so raw radiocarbon dates are off. Calibration against tree rings converts radiocarbon years to calendar years.</p></details>
+        </div>
+      </section>
+
+      <!-- LESSON 2 -->
+      <section class="lesson" id="lesson-2" aria-labelledby="h-2">
+        <div class="lesson__head">
+          <h2 id="h-2">Lesson 2. Classification and seriation</h2>
+          <p>How a pile of objects becomes data, and how that data puts sites in time order. Covers Q2, Q3 and Q5 (week 7, DTE Ch. 6).</p>
+        </div>
+        <div class="prose">
+          <h3>Three building blocks, smallest first</h3>
+          <p>An <b>attribute</b> is one observable or measurable feature of an artifact: color, shape, length, decoration, material, how it was made. There are three kinds:</p>
+          <ul>
+            <li><b>Form (morphological):</b> shape and size, like length, width and notches.</li>
+            <li><b>Stylistic:</b> decoration and color, like painted lines or slip color.</li>
+            <li><b>Technological:</b> how it was made and from what, like raw material, firing method or flaking technique.</li>
+          </ul>
+          <p>A <b>type</b> is a group of artifacts sharing a consistent cluster of attributes: a projectile point that is always side-notched, about 3 cm long and made of chert. A <b>typology</b> is an organized system of types for a region or artifact class: all the point types of a region, arranged by shape and time period.</p>
+          <p class="pull">Attributes are ingredients. A type is a recipe that always uses the same ingredients. A typology is the whole cookbook.</p>
+          <p>Types come in three kinds too. <b>Morphological</b> types describe physical form (grouping pots by shape). <b>Temporal</b> types change over time, so they date sites (a point style made only 1000 to 500 BC); these are the time-markers from Lesson 1. <b>Functional</b> types group by use (scrapers vs. projectile points).</p>
+          <p><b>Why bother?</b> Types organize huge amounts of data, since a site can yield thousands of artifacts. They help date sites. They allow comparison across a region, to spot trade or shared culture. And they give archaeologists a shared language. One thoughtful point to add: archaeologists create types to answer their own questions, so types may not match how the makers saw their objects.</p>
+
+          <h3>Seriation: dating by popularity</h3>
+          <p><b>Seriation</b> is a <b>relative</b> dating method: it orders artifacts in time but gives no calendar years. It works because styles have a life cycle. A style starts rare, becomes popular, then fades out. Graph its popularity over time and the shape is a <b>battleship curve</b>: narrow, wide, narrow.</p>
+        </div>
+        <figure>
+          <svg class="diagram" viewBox="0 0 880 400" role="img" aria-labelledby="d2-t d2-d">
+            <title id="d2-t">Schematic battleship curves for New England gravestone styles</title>
+            <desc id="d2-d">Time runs from earlier at the top to later at the bottom. Three columns show death’s heads, cherubs and urn-and-willow. Each style’s band is narrow, then wide, then narrow, and the widest point moves down the page from death’s heads to cherubs to urn-and-willow. A schematic of the shape, not measured counts.</desc>
+            <line class="axis" x1="110" y1="60" x2="110" y2="360"/>
+            <text x="20" y="72" class="lbl-s">Earlier</text>
+            <text x="20" y="360" class="lbl-s">Later</text>
+            <line class="grid" x1="120" y1="360" x2="860" y2="360"/>
+            <text x="250" y="44" class="lbl-b" text-anchor="middle">Death’s heads</text>
+            <text x="490" y="44" class="lbl-b" text-anchor="middle">Cherubs</text>
+            <text x="730" y="44" class="lbl-b" text-anchor="middle">Urn-and-willow</text>
+            <path class="spindle" d="M250 60 C 345 111, 345 179, 250 230 C 155 179, 155 111, 250 60 Z"/>
+            <path class="spindle" d="M490 120 C 595 177, 595 253, 490 310 C 385 253, 385 177, 490 120 Z"/>
+            <path class="spindle" d="M730 200 C 820 248, 820 312, 730 360 C 640 312, 640 248, 730 200 Z"/>
+            <text x="490" y="388" class="lbl-s" text-anchor="middle">Width shows how popular a style is at that moment. Schematic, not measured counts.</text>
+          </svg>
+          <figcaption>Deetz and Dethlefsen’s New England gravestones: death’s heads, then cherubs, then urn-and-willow. Each style rose and fell in a battleship curve that matched the dates carved on the stones.</figcaption>
+        </figure>
+        <div class="prose">
+          <p>There are two kinds. <b>Frequency seriation</b> orders by how common each type is: the battleship curves. <b>Stylistic (contextual) seriation</b> orders by gradual changes in style: Flinders Petrie ordered Egyptian graves by changes in pottery handles.</p>
+          <p><b>The blue jeans activity</b> was seriation in action. Leg cut, rise, wash and fit were the attributes. Grouping jeans by shared attributes created types, and watching types rise and fall showed seriation. Use your own class notes, but common examples are:</p>
+        </div>
+        <div class="sheet table-wrap">
+          <table>
+            <thead><tr><th scope="col" class="num">Era</th><th scope="col">Attributes that act as time-markers</th></tr></thead>
+            <tbody>
+              <tr><td class="num">1970s</td><td>Bell-bottoms, flared legs, high waist</td></tr>
+              <tr><td class="num">1980s</td><td>Acid wash, tapered legs, high waist</td></tr>
+              <tr><td class="num">1990s</td><td>Baggy or relaxed fit, light wash</td></tr>
+              <tr><td class="num">2000s</td><td>Low-rise, bootcut, distressing</td></tr>
+              <tr><td class="num">2010s</td><td>Skinny leg, stretch fabric</td></tr>
+              <tr class="is-key"><td class="num">2020s</td><td>High-rise again, wide or straight leg: a style came back</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="prose">
+          <p><b>The limitation to mention.</b> High-rise jeans returned. Seriation assumes a style appears and fades only once, so a comeback breaks the method.</p>
+        </div>
+
+        <div class="test" aria-labelledby="t-2">
+          <p class="test__title" id="t-2">On the test: Lesson 2</p>
+          <dl>
+            <div><dt>Multiple choice could ask</dt><dd><ul>
+              <li>Order from smallest to largest: <b>attribute, type, typology</b>.</li>
+              <li>What does a battleship curve show? <b>A style’s popularity rising and falling.</b></li>
+              <li>Is seriation relative or absolute? <b>Relative.</b></li>
+              <li>Which kind of attribute is slip color? <b>Stylistic.</b> Raw material? <b>Technological.</b></li>
+              <li>Names to match: <b>Deetz and Dethlefsen</b> with gravestones; <b>Petrie</b> with Egyptian graves and pottery handles.</li>
+            </ul></dd></div>
+            <div><dt>Short answer Q2</dt><dd><p>Type and typology. Define both, name the three kinds of types with an example each, give two reasons they’re useful, add the “types are our creation” point.</p></dd></div>
+            <div><dt>Short answer Q3</dt><dd><p>Seriation and jeans. Name it as relative dating, explain the battleship curve, describe the jeans and their attributes, then the gravestones or the comeback limitation.</p></dd></div>
+            <div><dt>Short answer Q5</dt><dd><p>Attributes. Define attribute, the three kinds with examples, how they cluster into types and types into a typology, and the cookbook analogy.</p></dd></div>
+            <div><dt>A sentence to write</dt><dd><p class="say">“Attributes are the raw data; the typology is the finished system that lets us date and compare sites.”</p></dd></div>
+          </dl>
+        </div>
+        <div class="checkq">
+          <h3>Check yourself</h3>
+          <details><summary>“Scrapers vs. projectile points” is which kind of type?</summary><p>Functional: it groups artifacts by what they were used for.</p></details>
+          <details><summary>Why did the jeans activity reveal a weakness of seriation?</summary><p>High-rise jeans came back, but seriation assumes each style appears and fades only once.</p></details>
+          <details><summary>How does a temporal type connect back to Lesson 1?</summary><p>A temporal type is a time-marker, the index fossil concept applied to artifacts: finding it dates the layer.</p></details>
+        </div>
+      </section>
+
+      <!-- LESSON 3 -->
+      <section class="lesson" id="lesson-3" aria-labelledby="h-3">
+        <div class="lesson__head">
+          <h2 id="h-3">Lesson 3. From objects to behavior</h2>
+          <p>How we get from things in the ground to what people did. Covers Q7 (week 9, DTE Ch. 7).</p>
+        </div>
+        <div class="prose">
+          <p>The archaeological record is <b>static</b>: objects sitting in the ground today. What we want to explain is <b>dynamic</b>: past behavior. <b>Middle-range theory</b> is the research that builds the bridge between the two, through experiments, <b>ethnoarchaeology</b> (studying living people) and careful observation.</p>
+          <p><b>Experimental archaeology</b> recreates past tools or actions to test ideas. <b>Replication</b> means making a copy of a tool to learn how it was made or used. Your two class activities are both bridges.</p>
+          <h3>The CWAM close-looking visit</h3>
+          <p>At the College of Wooster Art Museum, slow looking was the method. Insights you could use:</p>
+          <ul>
+            <li><b>Observation vs. inference.</b> Separate what you can see (tool marks, wear, paint traces, repairs) from what you assume (its use or meaning). Record observations first, conclusions second.</li>
+            <li><b>Objects carry their life history.</b> Use-wear, burning, chips and repairs show how an object was made, used and reused.</li>
+            <li><b>Museum objects can lack context.</b> Many have little or no provenience, so we can describe them but not fully explain them. This links to Q10.</li>
+          </ul>
+          <h3>The atlatl experiment</h3>
+          <p>You measured stride length and throwing distance. Insights you could use:</p>
+          <ul>
+            <li><b>Experiments turn guesses into testable data.</b> Instead of assuming an atlatl adds distance, we measured and compared.</li>
+            <li><b>Variability matters.</b> Skill, practice and body size changed distances. Past behavior varied too, so one measurement isn’t enough.</li>
+            <li><b>Sample size and control.</b> Repeated trials and controlled variables come before trusting a pattern.</li>
+            <li><b>Practice effect.</b> If your second throw improved, learning shaped performance. Ancient hunters trained for years, so our numbers likely underestimate their skill.</li>
+          </ul>
+        </div>
+        <div class="test" aria-labelledby="t-3">
+          <p class="test__title" id="t-3">On the test: Lesson 3</p>
+          <dl>
+            <div><dt>Multiple choice could ask</dt><dd><ul>
+              <li>What is middle-range theory? <b>Research linking what we see today to past behavior.</b></li>
+              <li>Making a copy of a tool to learn how it was used is <b>replication</b>.</li>
+              <li>Studying living people to understand the past is <b>ethnoarchaeology</b>.</li>
+            </ul></dd></div>
+            <div><dt>Short answer Q7</dt><dd><p>One insight from each activity. This asks for <b>your</b> insights, so use your own memory. Open with middle-range theory, then CWAM (what you looked at, your insight, why it matters), then the atlatl (your data, your insight, why it matters).</p></dd></div>
+            <div><dt>A sentence to write</dt><dd><p class="say">“Both activities show that explanations of the past must be grounded in careful, recorded observations.”</p></dd></div>
+          </dl>
+        </div>
+        <div class="checkq">
+          <h3>Check yourself</h3>
+          <details><summary>Why is the archaeological record called “static”?</summary><p>It is objects sitting in the ground today, not the living behavior that produced them. Middle-range theory bridges the gap.</p></details>
+          <details><summary>Give one reason the atlatl numbers may underestimate ancient hunters.</summary><p>The practice effect: hunters trained for years, while students threw only a few times.</p></details>
+        </div>
+      </section>
+
+      <!-- LESSON 4 -->
+      <section class="lesson" id="lesson-4" aria-labelledby="h-4">
+        <div class="lesson__head">
+          <h2 id="h-4">Lesson 4. Heritage law: NAGPRA and CRM</h2>
+          <p>US law grew from protecting federal land (1906), to planned management (1966), to Native American rights (1990). Covers Q8 and Q9 (week 10, DTE Ch. 13).</p>
+        </div>
+        <div class="prose">
+          <h3>Cultural resource management (CRM)</h3>
+          <p><b>CRM</b> is the management and protection of archaeological and historic sites, usually when construction or development threatens them. Most US archaeology today is done in CRM, not universities.</p>
+          <p>Early efforts were mostly two things: stopping looting on federal land, and <b>salvage archaeology</b>, rushing to dig sites right before dams and roads destroyed them. Learn this timeline in order:</p>
+        </div>
+        <div class="sheet table-wrap">
+          <table>
+            <thead><tr><th scope="col" class="num">Year</th><th scope="col">Law or program</th><th scope="col">What it did</th></tr></thead>
+            <tbody>
+              <tr><td class="num">1906</td><td>Antiquities Act</td><td>First US protection law: protected sites on federal land, required permits to dig, let presidents create national monuments. Aimed at looting in the Southwest</td></tr>
+              <tr><td class="num">1930s</td><td>New Deal relief archaeology (WPA, TVA)</td><td>Unemployed workers on large excavations, especially before dams flooded valleys</td></tr>
+              <tr><td class="num">1935</td><td>Historic Sites Act</td><td>Made preserving historic places national policy</td></tr>
+              <tr><td class="num">1946 to 1960s</td><td>River Basin Surveys (Smithsonian)</td><td>Salvage archaeology ahead of big postwar dam projects</td></tr>
+              <tr><td class="num">1960</td><td>Reservoir Salvage Act</td><td>Required recovering data before reservoir flooding</td></tr>
+              <tr class="is-key"><td class="num">1966</td><td>National Historic Preservation Act (NHPA)</td><td>The turning point: National Register of Historic Places, State Historic Preservation Offices, Section 106 review</td></tr>
+              <tr><td class="num">1969</td><td>National Environmental Policy Act (NEPA)</td><td>Impact studies, including cultural resources, for federal projects</td></tr>
+              <tr><td class="num">1974</td><td>Archaeological and Historic Preservation Act (Moss-Bennett)</td><td>Agencies may spend up to 1% of project funds on archaeology</td></tr>
+              <tr><td class="num">1979</td><td>Archaeological Resources Protection Act (ARPA)</td><td>Tougher fines and jail time for looting on public land</td></tr>
+              <tr><td class="num">1990</td><td>NAGPRA</td><td>Native American rights and repatriation</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="prose">
+          <p><b>How CRM changed.</b> From salvage to planning: after NHPA, Section 106 makes federal projects consider historic sites <em>in advance</em>. <b>Preservation in place</b> is now often preferred, with excavation as <b>mitigation</b> (reducing damage) when avoiding a site isn’t possible. A profession grew: CRM firms, government archaeologists, contract work. And since NAGPRA, descendant communities are consulted. The arc is from salvage to <b>stewardship</b>: caring for the past on behalf of everyone.</p>
+
+          <h3>NAGPRA (1990)</h3>
+          <p>The <b>Native American Graves Protection and Repatriation Act</b> is a federal human rights law. Its core idea: Native American human remains and certain objects are not just scientific specimens. Lineal descendants and tribes have legal rights to them.</p>
+          <p>It covers four categories: <b>human remains</b>; <b>funerary objects</b> (placed with burials); <b>sacred objects</b> (needed for ongoing religious practice); and <b>objects of cultural patrimony</b> (belonging to the whole community, not one person).</p>
+          <p>The stipulations, in three verbs: <b>inventory, consult, repatriate</b>. Federal agencies and federally funded museums must inventory covered items, consult with tribes and descendants, and return them on request. <b>Repatriation</b> means returning remains or objects to the people they came from. Excavations on federal or tribal land require consultation, discoveries must be reported, and trafficking is illegal.</p>
+          <p><b>How it changed archaeology.</b> Collaboration replaced control, leading to community-based and Indigenous archaeology. Oral traditions now count as evidence alongside science. Museums returned collections, and updated rules in 2024 strengthened tribal consent, so several major museums closed or covered exhibits.</p>
+          <p><b>The example: Kennewick Man</b> (“the Ancient One”), about 9,000 years old, found in Washington in 1996. A long legal fight between scientists and tribes followed. DNA later linked him to Native Americans, and tribes reburied him in 2017.</p>
+        </div>
+        <div class="test" aria-labelledby="t-4">
+          <p class="test__title" id="t-4">On the test: Lesson 4</p>
+          <dl>
+            <div><dt>Multiple choice could ask</dt><dd><ul>
+              <li>Years: <b>Antiquities Act 1906</b>, <b>NHPA 1966</b>, <b>NEPA 1969</b>, <b>ARPA 1979</b>, <b>NAGPRA 1990</b>.</li>
+              <li>Which law is the CRM turning point? <b>NHPA</b>, through Section 106.</li>
+              <li>Which allowed 1% of project funds? <b>Moss-Bennett (1974)</b>. Tougher looting penalties? <b>ARPA (1979)</b>.</li>
+              <li>Which is one of NAGPRA’s four categories? Know all four, especially <b>cultural patrimony</b>.</li>
+              <li>What happened to Kennewick Man? <b>DNA linked him to Native Americans; reburied in 2017.</b></li>
+            </ul></dd></div>
+            <div><dt>Short answer Q8</dt><dd><p>NAGPRA. Name and year, the four categories, inventory, consult, repatriate, how practice changed (collaboration), with Kennewick Man.</p></dd></div>
+            <div><dt>Short answer Q9</dt><dd><p>Early CRM. Define CRM, the 1906 Antiquities Act and the New Deal salvage era, NHPA 1966 as the turning point, later laws, and the shift from salvage to stewardship.</p></dd></div>
+            <div><dt>A sentence to write</dt><dd><p class="say">“CRM moved from last-minute salvage to planned stewardship, and since NAGPRA it includes the descendant communities whose past it manages.”</p></dd></div>
+          </dl>
+        </div>
+        <div class="checkq">
+          <h3>Check yourself</h3>
+          <details><summary>What does Section 106 require, and which law created it?</summary><p>Federal projects must consider their effects on historic sites in advance. It comes from the NHPA, 1966.</p></details>
+          <details><summary>Name NAGPRA’s three main verbs.</summary><p>Inventory, consult, repatriate.</p></details>
+          <details><summary>What is mitigation in CRM?</summary><p>Reducing damage to a site before construction, often by excavating it when the site can’t be avoided.</p></details>
+        </div>
+      </section>
+
+      <!-- LESSON 5 -->
+      <section class="lesson" id="lesson-5" aria-labelledby="h-5">
+        <div class="lesson__head">
+          <h2 id="h-5">Lesson 5. The ethics of looting</h2>
+          <p>Who should hold the past, and what to do with objects torn from it. Covers Q10 and Q11 (week 11, Ethics Bowl and the film).</p>
+        </div>
+        <div class="prose">
+          <p>There is no right or wrong answer here. You are graded on <b>a clear position, good reasons, examples, and showing you understand the other side</b>. Use this formula:</p>
+          <ol>
+            <li>Take a clear stance in your first sentence (“I believe…”).</li>
+            <li>Give two reasons, each with an example (the film, a law, a class discussion).</li>
+            <li>Acknowledge the strongest counterargument, then explain why you still hold your view.</li>
+            <li>Add a nuance (“It depends on…”). This shows mature thinking.</li>
+          </ol>
+          <h3>The key words</h3>
+          <p><b>Provenience</b> is the exact 3-D spot where an artifact was found. <b>Provenance</b> is its ownership history after discovery. An object pulled out of the ground by looters is <b>decontextualized</b>: removed from its setting and stripped of its information. <b>Antiquities</b> are ancient objects, especially ones bought and sold. The <b>public trust</b> means museum holdings are kept for public benefit, not private gain.</p>
+
+          <h3>Q10: Should looted artifacts be studied and published?</h3>
+          <p><em>Out of the Maya Tombs</em> is about painted Maya vessels looted from tombs and sold on the antiquities market. Many carry hieroglyphic texts and scenes that helped scholars decipher Maya writing, but their findspots were destroyed.</p>
+        </div>
+        <div class="sheet table-wrap">
+          <table>
+            <thead><tr><th scope="col">Side</th><th scope="col">Main argument</th><th scope="col">Supporting points</th></tr></thead>
+            <tbody>
+              <tr><td>Yes, study them</td><td>Ignoring information is itself unethical; the damage is already done</td><td>The texts and images still teach us about Maya religion, politics and writing; refusing to look doesn’t un-loot the object</td></tr>
+              <tr><td>No, don’t publish</td><td>Without context an artifact loses most of its meaning; publishing raises its market value</td><td>Expert publication can authenticate pieces and encourage more looting; the tomb, the burial and the associations are lost forever</td></tr>
+              <tr class="is-key"><td>Middle ground</td><td>Study, but with conditions</td><td>Publish with clear notes that they were looted and lack provenience, and never authenticate or appraise for sale; or study only once in a public museum or returned to the country of origin (Guatemala, Mexico)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="prose">
+          <p><b>The key point, whichever side you take:</b> looting destroys context (the tomb, the body, the other offerings), and context is what tells us who owned an object and how it was used. Tie it back to CWAM if you noticed how little some museum pieces could tell you.</p>
+
+          <h3>Q11: Private collections vs. the public trust</h3>
+          <p>State the background clearly. The <b>1970 UNESCO Convention</b> set international rules against illegally exporting and trading cultural property. The <b>2008 AAMD guidelines</b> say member museums should only acquire objects documented as leaving their country of origin before 1970, or legally exported after. Many objects without that paperwork sit in private collections, unseen.</p>
+        </div>
+        <div class="sheet table-wrap">
+          <table>
+            <thead><tr><th scope="col">Position</th><th scope="col">Main argument</th><th scope="col">Supporting points</th></tr></thead>
+            <tbody>
+              <tr><td>Museums should accept them</td><td>Public access beats a hidden private shelf</td><td>Objects can be studied, conserved, displayed and potentially returned; museums can research their history openly</td></tr>
+              <tr><td>Museums should refuse them</td><td>Accepting rewards the illegal market</td><td>It “launders” looted objects and tells collectors buying looted items pays off (tax deductions, prestige); it weakens the 1970 rule</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="prose">
+          <p><b>Does it depend on the type of object?</b> The question asks this outright, so answer it.</p>
+          <ul>
+            <li><b>Human remains and sacred objects:</b> most argue these should go back to descendant communities, not into any collection. That is NAGPRA’s logic.</li>
+            <li><b>Unique, high-value pieces</b> like painted Maya vases: more likely looted to order, so accepting them creates more risk.</li>
+            <li><b>Common, mass-produced items</b> like ancient coins: lower risk of encouraging new looting, and more scholarly value when grouped together.</li>
+          </ul>
+          <p><b>Middle ground:</b> accept the object but publish everything known about its history, actively offer return to the country of origin, or hold it as a loan rather than an acquisition.</p>
+        </div>
+        <div class="test" aria-labelledby="t-5">
+          <p class="test__title" id="t-5">On the test: Lesson 5</p>
+          <dl>
+            <div><dt>Multiple choice could ask</dt><dd><ul>
+              <li>The classic trap: <b>provenience = find spot</b>, <b>provenance = ownership history</b>.</li>
+              <li>Years: <b>UNESCO 1970</b>; <b>AAMD 2008</b>, which uses 1970 as its cutoff.</li>
+              <li>Why did the looted Maya vessels matter? <b>Their texts helped decipher Maya writing.</b></li>
+            </ul></dd></div>
+            <div><dt>Short answer Q10</dt><dd><p>A stance on studying looted artifacts, two reasons with examples from the film, the counterargument, a middle ground, and context as the key point.</p></dd></div>
+            <div><dt>Short answer Q11</dt><dd><p>A stance on museums accepting undocumented objects, the UNESCO and AAMD background, reasons and counterargument, and an explicit answer to “does it depend on the object?”</p></dd></div>
+            <div><dt>A sentence to write</dt><dd><p class="say">“Whatever we decide about a looted object, the information lost with its context can never be recovered, which is why stewardship has to start before the looting does.”</p></dd></div>
+          </dl>
+        </div>
+        <div class="checkq">
+          <h3>Check yourself</h3>
+          <details><summary>A museum record says a vase was “sold at auction in 1985”. Is that provenience or provenance?</summary><p>Provenance: ownership history. Provenience would be where in the ground it was found.</p></details>
+          <details><summary>Why might expert publication encourage looting?</summary><p>Publication can authenticate a piece and raise its market value, which rewards the looters and dealers.</p></details>
+          <details><summary>What does Q11 explicitly ask you to address?</summary><p>Whether your answer depends on the type of object: human remains and sacred objects, unique high-value pieces, or common items like coins.</p></details>
+        </div>
+      </section>
+
+      <!-- GLOSSARY -->
+      <section class="lesson" id="glossary" aria-labelledby="h-g">
+        <div class="lesson__head">
+          <h2 id="h-g">All 26 terms</h2>
+          <p>Using these, with a quick definition, is what earns “proper terminology” points. Underline each one the first time you use it.</p>
+        </div>
+        <div class="sheet table-wrap">
+          <table class="gloss">
+            <thead><tr><th scope="col">Term</th><th scope="col">Simple meaning</th><th scope="col">Use in</th></tr></thead>
+            <tbody>
+              <tr><td>Stratigraphy</td><td>The study of layers (strata) of soil and deposits</td><td>Q1 Q6</td></tr>
+              <tr><td>Superposition</td><td>Lower layers formed before upper layers</td><td>Q1</td></tr>
+              <tr><td>In situ</td><td>“In place”: still where it was originally left</td><td>Q1 Q10</td></tr>
+              <tr><td>Provenience</td><td>The exact 3-D spot where an artifact was found</td><td>Q10 Q11</td></tr>
+              <tr><td>Provenance</td><td>An object’s ownership history after discovery</td><td>Q11</td></tr>
+              <tr><td>Context</td><td>An artifact’s position plus what it is associated with</td><td>Q1 Q10</td></tr>
+              <tr><td>Assemblage</td><td>All the artifacts from one site or layer, studied together</td><td>Q2 Q3</td></tr>
+              <tr><td>Terminus post quem</td><td>“Date after which”: a layer can’t be older than the newest thing in it</td><td>Q1 Q6</td></tr>
+              <tr><td>Terminus ante quem</td><td>“Date before which”: a layer sealed below something datable is older than it</td><td>Q1 Q6</td></tr>
+              <tr><td>Chronometric</td><td>Measured in calendar years (another word for absolute dating)</td><td>Q6</td></tr>
+              <tr><td>Calibration</td><td>Correcting radiocarbon years into true calendar years</td><td>Q4</td></tr>
+              <tr><td>Half-life</td><td>Time for half of a radioactive isotope to decay (carbon-14: about 5,730 years)</td><td>Q4</td></tr>
+              <tr><td>Attribute</td><td>One measurable feature of an artifact</td><td>Q3 Q5</td></tr>
+              <tr><td>Typology</td><td>An organized system of types</td><td>Q2 Q5</td></tr>
+              <tr><td>Seriation</td><td>Ordering artifacts in time by changes in style or popularity</td><td>Q3</td></tr>
+              <tr><td>Time-marker (index artifact)</td><td>A type found only in one time period, so it dates its layer</td><td>Q1 Q2</td></tr>
+              <tr><td>Middle-range theory</td><td>Research that links what we see today to past behavior</td><td>Q7</td></tr>
+              <tr><td>Experimental archaeology</td><td>Recreating past tools or actions to test ideas</td><td>Q7</td></tr>
+              <tr><td>Replication</td><td>Making a copy of a tool to learn how it was made or used</td><td>Q7</td></tr>
+              <tr><td>Repatriation</td><td>Returning remains or objects to the people they came from</td><td>Q8</td></tr>
+              <tr><td>Cultural patrimony</td><td>Objects belonging to a whole community, not one person</td><td>Q8 Q11</td></tr>
+              <tr><td>Stewardship</td><td>Caring for the past on behalf of everyone, now and later</td><td>Q9 Q11</td></tr>
+              <tr><td>Mitigation</td><td>Reducing damage to a site before construction (often by excavating it)</td><td>Q9</td></tr>
+              <tr><td>Decontextualized</td><td>Removed from its original setting, losing its information</td><td>Q10</td></tr>
+              <tr><td>Antiquities</td><td>Ancient objects, especially those bought and sold</td><td>Q11</td></tr>
+              <tr><td>Public trust</td><td>Museum holdings kept for public benefit, not private gain</td><td>Q11</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="band" aria-labelledby="h-plan">
+    <div class="container band__grid">
+      <div>
+        <h2 id="h-plan">Tonight, then tomorrow</h2>
+        <a class="btn" href="https://claude.ai/artifact/2wgESJzR7rriVmhNdctqJN" rel="noopener">Practise in the study lab</a>
+      </div>
+      <ol>
+        <li>Pick your 6 or 7 questions. The suggested core is <b>1, 3, 6, 8, 9, 10, plus 7</b>, since it is personal.</li>
+        <li>For each, write the four-step outline from memory, then check it against the lesson here.</li>
+        <li>Fill your 3 by 5 index card with law dates, NAGPRA’s four categories, the C-14 numbers and your Q10 and Q11 stances.</li>
+        <li>Skim RBD Chapters 4, 7, 11 and 12 and the PowerPoint PDFs for names that could appear in multiple choice.</li>
+        <li>On the day: answer the short answers you know best first, underline each key term, and aim for one or two solid paragraphs each.</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <p>Built with Hallmark v2.0.0 in the Almanac theme, from your ARCH 103 Exam #2 Study Guide. The jeans examples are the guide’s common examples; your class notes come first.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // the contents rail follows the lesson in view
+  const links = [...document.querySelectorAll('.rail a')];
+  const map = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return;
+    links.forEach((a) => a.removeAttribute('aria-current'));
+    const a = map.get(e.target.id); if (a) a.setAttribute('aria-current', 'true');
+  }), { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('.lesson[id]').forEach((s) => io.observe(s));
+})();
+</script>
