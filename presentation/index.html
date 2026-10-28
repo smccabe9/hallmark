@@ -1,0 +1,412 @@
+<title>Claude Code at Home</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A scroll-through presentation on what Claude Code can do for studying, money, admin and planning, and what the Hallmark design skill adds to the pages it builds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · shape: Workbench · genre: modern-minimal · theme: Cobalt (deal 3/3, seed scroll-through-presentation-explaining-what-e4bb·4c941540·2026-10-28·r0) · job: sign up · draw: b0f268
+ * hero: Counter · nav: banner over a retracting bar · footer: colophon block · imagery: the product (a terminal session, real sloplint output, three real theme pictures) · signature: real sloplint output on a slopped page, pinned while the tiers scroll past
+ * axes: light/grotesk-sans/cool · posture: restrained · contrast: pass · fold: pass · v2.0.0
+ * swaps: pricing table becomes a table of five uses (no prices exist for a personal presentation) · deck: -pricing +uses */
+/* Hallmark · pre-emit critique: P4 H5 E4 S4 R5 V4 · weakest: P, a presentation argues less than a product page; it argues one thing, that the checks are the difference, and shows real lint output to prove it */
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+  --color-paper: oklch(98.6% 0.005 250); --color-paper-2: oklch(96.2% 0.008 252); --color-paper-3: oklch(93% 0.011 252);
+  --color-ink: oklch(21% 0.028 262); --color-ink-2: oklch(36% 0.022 260); --color-muted: oklch(50% 0.018 258);
+  --color-rule: oklch(90% 0.009 252); --color-rule-2: oklch(83% 0.012 252);
+  --color-graphite: oklch(21% 0.024 262); --color-graphite-2: oklch(26.5% 0.026 262); --color-graphite-ink: oklch(93% 0.010 250); --color-graphite-muted: oklch(69% 0.022 256);
+  --color-accent: oklch(52% 0.19 258); --color-accent-2: oklch(76% 0.13 254); --color-accent-wash: oklch(95% 0.028 256); --color-accent-ink: oklch(98.6% 0.005 250); --color-focus: oklch(52% 0.19 258);
+  --color-accent-deep: oklch(43% 0.2 262); --color-accent-edge: oklch(39% 0.16 260);
+  --color-glyph-1: oklch(89% 0.025 254); --color-glyph-2: oklch(81% 0.045 255); --color-glyph-3: oklch(70% 0.085 256); --color-glyph-4: oklch(60% 0.13 257);
+  --color-graphite-glyph-1: oklch(33% 0.03 262); --color-graphite-glyph-2: oklch(41% 0.05 260); --color-graphite-glyph-3: oklch(53% 0.1 258);
+  --color-key-face: oklch(99.4% 0.003 250); --color-key-edge: oklch(80% 0.016 254);
+  --color-fail: oklch(78% 0.12 27);
+  --font-display: "Familjen Grotesk", system-ui, sans-serif; --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-outlier: "JetBrains Mono", ui-monospace, monospace;
+  --radius-card: 8px; --radius-input: 6px; --radius-pill: 999px;
+  --cell-w: 8px; --cell-h: 16px; --cut: 8px; --cut-l: 16px;
+  --rule-hair: 1px; --shadow-card: 0 1px 2px oklch(21% 0.028 262 / 0.06);
+  --shadow-key: 0 3px 0 0 var(--color-key-edge), 0 6px 8px -4px oklch(21% 0.028 262 / 0.28), inset 0 1px 0 oklch(100% 0 0 / 0.9);
+  --shadow-key-accent: 0 3px 0 0 var(--color-accent-edge), 0 6px 8px -4px oklch(30% 0.12 260 / 0.45), inset 0 1px 0 oklch(100% 0 0 / 0.22);
+  --shadow-key-press: inset 0 1px 2px oklch(21% 0.028 262 / 0.14);
+  --tracking-display: -0.028em; --display-weight: 600;
+  --banner-h: 40px; --nav-h: 64px;
+}
+
+/* base (from the scaffold) */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { scrollbar-color: var(--color-muted) var(--color-paper); scroll-padding-top: var(--space-3xl); }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.55; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: var(--z-modal); background: var(--color-paper); }
+::selection { background: color-mix(in oklab, var(--color-accent) 22%, transparent); color: var(--color-ink); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; text-decoration-color: var(--color-rule-2); }
+a:hover { text-decoration-color: var(--color-accent); }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-synthesis: none; letter-spacing: var(--tracking-display); line-height: 1.04; color: var(--color-ink); overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+h1 { max-width: 14ch; font-size: var(--text-display); line-height: 1.02; } h2 { max-width: 22ch; font-size: var(--text-section); } h3 { max-width: 40ch; font-size: var(--text-title); font-weight: 500; line-height: 1.2; }
+.lead { font-size: var(--text-lead); line-height: 1.45; max-width: 44ch; color: var(--color-ink-2); }
+p { margin: 0; text-wrap: pretty; }
+img { max-width: 100%; height: auto; display: block; }
+[hidden] { display: none !important; }
+button { font: inherit; }
+code, pre, kbd { font-family: var(--font-outlier); }
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+.skip { position: absolute; left: var(--space-md); top: calc(-1 * var(--space-3xl)); z-index: var(--z-toast); padding: var(--space-xs) var(--space-md); background: var(--color-ink); color: var(--color-paper); }
+.skip:focus-visible { top: var(--space-md); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; } }
+@media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
+@media (prefers-reduced-motion: reduce) { *:not(.keep-motion), *:not(.keep-motion)::before, *:not(.keep-motion)::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+
+/* keys: keycaps on a real bottom edge */
+.key { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); border: var(--rule-hair) solid var(--color-rule-2); border-radius: var(--radius-input); background: var(--color-key-face); color: var(--color-ink); font: 500 var(--text-md)/1 var(--font-display); white-space: nowrap; text-decoration: none; cursor: pointer; box-shadow: var(--shadow-key); transition: transform var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out); }
+.key:hover { transform: translateY(-1px); }
+.key:active { transform: translateY(3px); box-shadow: var(--shadow-key-press); }
+.key:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.key:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+.key--primary { background: var(--color-accent); border-color: var(--color-accent-edge); color: var(--color-accent-ink); box-shadow: var(--shadow-key-accent); }
+.key--small { min-height: 44px; padding: 0 var(--space-md); font-size: var(--text-sm); }
+@media (prefers-reduced-motion: reduce) { .key { transition: none; } .key:hover, .key:active { transform: none; } }
+
+/* cut panels */
+.cut { border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); }
+@supports (corner-shape: bevel) { .cut { border-radius: var(--cut-l) 4px var(--cut-l) 4px; corner-shape: bevel round bevel round; } }
+.graphite { background: var(--color-graphite); color: var(--color-graphite-ink); border-color: var(--color-graphite); }
+
+/* banner and retracting bar */
+.banner { height: var(--banner-h); display: flex; align-items: center; background: var(--color-paper-2); border-bottom: var(--rule-hair) solid var(--color-rule); font-size: var(--text-sm); color: var(--color-ink-2); }
+.banner .container { display: flex; justify-content: space-between; gap: var(--space-md); }
+.banner a { white-space: nowrap; }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: var(--z-sticky-nav); height: var(--nav-h); display: flex; align-items: center; background: var(--color-paper); border-bottom: var(--rule-hair) solid var(--color-rule); transition: transform var(--dur-short) var(--ease-out); }
+.bar.is-tucked { transform: translateY(-100%); }
+.bar .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); }
+.wordmark { font: 600 var(--text-lg)/1 var(--font-display); letter-spacing: var(--tracking-display); text-decoration: none; white-space: nowrap; }
+.bar nav ul { display: flex; align-items: center; gap: var(--space-lg); margin: 0; padding: 0; list-style: none; }
+.bar nav a:not(.key) { font-size: var(--text-sm); color: var(--color-ink-2); text-decoration: none; white-space: nowrap; }
+.bar nav a:not(.key):hover { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-accent); }
+@media (max-width: 48rem) { .bar nav li:not(:last-child) { display: none; } .banner__aside { display: none; } }
+
+/* hero: Counter, the start is the visual */
+.hero { position: relative; isolation: isolate; min-height: calc(100dvh - var(--banner-h) - var(--nav-h)); display: grid; align-items: center; padding-block: var(--space-2xl); }
+.field { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
+.hero__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-3xl); align-items: center; }
+.hero__text { display: grid; gap: var(--space-lg); justify-items: start; }
+.hero__text .key { margin-top: var(--space-xs); }
+.term { display: grid; overflow: hidden; box-shadow: var(--shadow-card); }
+.term__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-sm) var(--space-lg); background: var(--color-graphite-2); font-size: var(--text-sm); color: var(--color-graphite-muted); }
+.term pre { margin: 0; padding: var(--space-xl) var(--space-xl) var(--space-xl); font-size: clamp(0.9375rem, 0.6vw + 0.6rem, 1.25rem); line-height: 2; overflow-x: auto; white-space: pre; }
+.term .c { color: var(--color-graphite-muted); }
+.term .p { color: var(--color-accent-2); }
+.term__foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md); padding: 0 var(--space-xl) var(--space-xl); }
+.term__foot p { font-size: var(--text-sm); color: var(--color-graphite-muted); }
+.copy-status { min-height: 1lh; }
+
+/* sections */
+.section { padding-block: var(--section-gap) 0; }
+.section--l { padding-top: var(--section-gap-l); }
+.section--s { padding-top: var(--section-gap-s); }
+.head { display: grid; gap: var(--space-md); margin-bottom: var(--space-2xl); }
+
+/* uses: a table that is the work */
+.uses { width: 100%; border-collapse: collapse; font-size: var(--text-md); }
+.uses th { padding: 0 var(--space-lg) var(--space-sm) 0; text-align: left; font: 500 var(--text-sm)/1.3 var(--font-display); color: var(--color-muted); border-bottom: var(--rule-hair) solid var(--color-rule-2); white-space: nowrap; }
+.uses td { padding: var(--space-lg) var(--space-lg) var(--space-lg) 0; border-bottom: var(--rule-hair) solid var(--color-rule); vertical-align: baseline; }
+.uses td:first-child { width: 16%; font: 500 var(--text-title)/1.2 var(--font-display); letter-spacing: var(--tracking-display); }
+.uses td:nth-child(2) { width: 50%; }
+.uses code { font-size: var(--text-md); color: var(--color-accent-deep); }
+.uses tr.is-lit td { background: var(--color-accent-wash); }
+.uses tr.is-lit td:first-child { box-shadow: inset 3px 0 0 var(--color-accent); padding-left: var(--space-md); }
+@media (max-width: 48rem) {
+  .uses thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .uses, .uses tbody, .uses tr, .uses td { display: block; width: 100%; }
+  .uses tr { padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  .uses td, .uses td:first-child, .uses td:nth-child(2) { width: 100%; padding: var(--space-2xs) 0; border: 0; }
+  .uses tr.is-lit { background: var(--color-accent-wash); padding-inline: var(--space-md); }
+  .uses tr.is-lit td { background: none; }
+  .uses tr.is-lit td:first-child { box-shadow: none; padding-left: 0; }
+  .uses code { white-space: normal; }
+}
+
+/* pinned: real lint output held while the tiers scroll */
+.pinned { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-3xl); align-items: start; }
+.pinned__visual { position: sticky; top: calc(var(--nav-h) + var(--space-lg)); }
+.lint pre { margin: 0; padding: var(--space-lg) 0; font-size: var(--text-sm); line-height: 1.9; overflow-x: auto; }
+.lint .ln { display: block; padding-inline: var(--space-lg); transition: background-color var(--dur-short) var(--ease-out), opacity var(--dur-short) var(--ease-out); }
+.lint .cmd { color: var(--color-graphite-muted); }
+.lint .g { color: var(--color-accent-2); }
+.lint .ln-fail .t { color: var(--color-fail); }
+.lint .ln-reflex .t { color: var(--color-accent-2); }
+.lint .sum { color: var(--color-graphite-ink); }
+.js .lint[data-step] .ln:not(.cmd) { opacity: 0.45; }
+.js .lint[data-step="fail"] .ln-fail, .js .lint[data-step="reflex"] .ln-reflex, .js .lint[data-step="review"] .sum { opacity: 1; background: var(--color-graphite-2); }
+.lint figcaption { padding: var(--space-sm) var(--space-lg); border-top: var(--rule-hair) solid var(--color-graphite-2); font-size: var(--text-sm); color: var(--color-graphite-muted); }
+.panels { display: grid; gap: 0; }
+.panel { min-height: 62dvh; display: grid; align-content: center; gap: var(--space-md); padding-block: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
+.panel:first-child { border-top: 0; align-content: start; padding-top: 0; }
+.panel p { max-width: 40ch; color: var(--color-ink-2); }
+@media (max-width: 60rem) {
+  .pinned { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  .pinned__visual { position: static; }
+  .panel { min-height: 0; }
+  .js .lint[data-step] .ln:not(.cmd) { opacity: 1; background: none; }
+}
+
+/* the deal: three real theme pictures */
+.deal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-columns); margin: 0; padding: 0; list-style: none; }
+.deal figure { margin: 0; display: grid; gap: var(--space-md); }
+.deal .shot { aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius-card); border: var(--rule-hair) solid var(--color-rule); background: var(--color-paper-2); }
+.deal .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.deal li.is-picked .shot { border-color: var(--color-accent); box-shadow: 0 0 0 1px var(--color-accent); }
+.deal figcaption { display: grid; gap: var(--space-2xs); }
+.deal figcaption b { font: 500 var(--text-title)/1.2 var(--font-display); letter-spacing: var(--tracking-display); }
+.deal figcaption span { font-size: var(--text-sm); color: var(--color-ink-2); }
+@media (max-width: 60rem) { .deal { grid-template-columns: minmax(0, 1fr); max-width: 30rem; } }
+
+/* questions as rows */
+.qa { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--gap-columns); align-items: start; }
+.qa dl { margin: 0; }
+.qa .row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); padding-block: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
+.qa .row:last-child { border-bottom: var(--rule-hair) solid var(--color-rule); }
+.qa dt { font: 500 var(--text-title)/1.2 var(--font-display); letter-spacing: var(--tracking-display); }
+.qa dd { margin: 0; color: var(--color-ink-2); max-width: 44ch; }
+@media (max-width: 60rem) { .qa, .qa .row { grid-template-columns: minmax(0, 1fr); } .qa .row { gap: var(--space-xs); padding-block: var(--space-lg); } }
+
+/* the close: the hero's start again */
+.close { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-3xl); align-items: center; padding-block: var(--space-2xl); border-top: var(--rule-hair) solid var(--color-rule); }
+.cmds { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-md); }
+.cmd-chip { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-lg); background: var(--color-paper-2); }
+.cmd-chip code { font-size: clamp(0.875rem, 0.5vw + 0.65rem, 1.125rem); overflow-x: auto; white-space: nowrap; min-width: 0; }
+.close .note { font-size: var(--text-sm); color: var(--color-muted); }
+@media (max-width: 60rem) { .hero__grid, .close { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); } }
+
+/* footer: colophon block */
+.foot { margin-top: var(--section-gap); padding-block: var(--space-2xl); background: var(--color-paper-2); border-top: var(--rule-hair) solid var(--color-rule); }
+.foot .container { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); }
+.foot p { max-width: 60ch; font-size: var(--text-sm); color: var(--color-ink-2); }
+.foot .wordmark { font-size: var(--text-xl); }
+@media (max-width: 60rem) { .foot .container { grid-template-columns: minmax(0, 1fr); } }
+</style>
+<script>document.documentElement.classList.add('js'); document.documentElement.lang = 'en';</script>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="banner">
+  <div class="container">
+    <span>Six screens. Scroll to move on.</span>
+    <span class="banner__aside">Built with <a href="https://www.usehallmark.com" rel="noopener">Hallmark</a></span>
+  </div>
+</div>
+<header class="bar" data-bar>
+  <div class="container">
+    <a class="wordmark" href="#main" aria-label="Claude Code at home, back to the start">Claude Code at home</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#uses">Five uses</a></li>
+        <li><a href="#hallmark">What Hallmark adds</a></li>
+        <li><a href="#questions">Questions</a></li>
+        <li><a class="key key--small" href="#start">Start</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <canvas class="field" aria-hidden="true"></canvas>
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <h1 id="hero-title">Claude Code for your own week</h1>
+        <p class="lead">A terminal assistant that reads your files and does the work.</p>
+        <a class="key" href="#uses">See five uses</a>
+      </div>
+      <figure class="term cut graphite" style="margin:0">
+        <figcaption class="term__head"><span>Terminal</span><span>macOS, Linux or Windows</span></figcaption>
+<pre aria-label="Three commands and a first request"><code><span class="c"># once, to install</span>
+<span id="install-line">npm install -g @anthropic-ai/claude-code</span>
+<span class="c"># then, in any folder</span>
+cd ~/notes
+claude
+<span class="c"># and ask in plain words</span>
+<span class="p">&gt;</span> quiz me on biology.md, ten questions</code></pre>
+        <div class="term__foot">
+          <button class="key key--primary" type="button" data-copy="install-line">Copy the install line</button>
+          <p class="copy-status" aria-live="polite">Needs Node 18 or later.</p>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="uses" aria-labelledby="uses-title">
+    <div class="container">
+      <div class="head">
+        <h2 id="uses-title">Five jobs it can take off you</h2>
+      </div>
+      <table class="uses">
+        <thead><tr><th scope="col">For</th><th scope="col">You type</th><th scope="col">You get</th></tr></thead>
+        <tbody>
+          <tr class="is-lit"><td>Studying</td><td><code>quiz me on biology.md, ten questions</code></td><td>A quiz you can retake</td></tr>
+          <tr><td>Studying</td><td><code>explain chapter 3 simply</code></td><td>A plain summary</td></tr>
+          <tr><td>Money</td><td><code>total march.csv by category</code></td><td>Your spending</td></tr>
+          <tr><td>Admin</td><td><code>rename the scans in Downloads by date</code></td><td>Tidy files</td></tr>
+          <tr><td>Planning</td><td><code>plan revision for my exams</code></td><td>A printable timetable</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section section--l" id="hallmark" aria-labelledby="hallmark-title">
+    <div class="container">
+      <div class="head">
+        <h2 id="hallmark-title">What Hallmark adds to a page</h2>
+        <p class="lead">Hallmark checks every page before you see it.</p>
+      </div>
+      <div class="pinned">
+        <figure class="pinned__visual lint cut graphite" style="margin:0" data-lint>
+<pre aria-label="Real sloplint output, shortened"><code><span class="ln cmd">$ node sloplint.mjs fixtures/slopped.html</span>
+<span class="ln ln-fail"><span class="t">FAIL</span>   <span class="g">2a</span>   purple-to-blue gradient text on h1</span>
+<span class="ln ln-fail"><span class="t">FAIL</span>   <span class="g">34</span>   overflow-x: hidden on html</span>
+<span class="ln ln-fail"><span class="t">FAIL</span>   <span class="g">55a</span>  uppercase head, line-height 0.94</span>
+<span class="ln ln-reflex"><span class="t">REFLEX</span> <span class="g">1</span>    display font "poppins"</span>
+<span class="ln ln-reflex"><span class="t">REFLEX</span> <span class="g">38ii</span> italic display type on h2</span>
+<span class="ln sum">sloplint: 24 FAIL, 15 REFLEX, 4 WARN across 1 file(s).</span></code></pre>
+          <figcaption>Run on Hallmark’s deliberately bad test page.</figcaption>
+        </figure>
+        <div class="panels">
+          <div class="panel" data-step="fail">
+            <h3>The floor never ships</h3>
+            <p>Low contrast, a broken phone layout or an invented number stops the page.</p>
+          </div>
+          <div class="panel" data-step="reflex">
+            <h3>Habits need a reason</h3>
+            <p>Every model’s default moves get fixed, or excused with a written reason.</p>
+          </div>
+          <div class="panel" data-step="review">
+            <h3>Then a fresh pair of eyes</h3>
+            <p>It checks eight screen widths in a real browser, then a fresh reviewer decides.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="deal-title">
+    <div class="container">
+      <div class="head">
+        <h2 id="deal-title">This page was dealt three themes</h2>
+        <p class="lead">Three of fifty, picked to fit the request.</p>
+      </div>
+      <ul class="deal">
+        <li><figure><div class="shot"><img src="img/blueprint.jpg" width="960" height="1208" alt="A page in the Blueprint theme: white capitals on prussian blue, over a timber photograph" loading="lazy"></div><figcaption><b>Blueprint</b><span>A drafting sheet in prussian blue</span></figcaption></figure></li>
+        <li><figure><div class="shot"><img src="img/dose.jpg" width="960" height="1208" alt="A page in the Dose theme: warm paper, a family medication app in green" loading="lazy"></div><figcaption><b>Dose</b><span>Warm paper and one pharmacy green</span></figcaption></figure></li>
+        <li class="is-picked"><figure><div class="shot"><img src="img/cobalt.jpg" width="960" height="1208" alt="A page in the Cobalt theme: dark heads on cool white, a field of characters, code on graphite" loading="lazy"></div><figcaption><b>Cobalt, picked</b><span>Hairlines, keycaps and code on graphite</span></figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--l" id="questions" aria-labelledby="qa-title">
+    <div class="container qa">
+      <h2 id="qa-title">Before you try it</h2>
+      <dl>
+        <div class="row"><dt>Do I need to code?</dt><dd>No. You ask in plain English; it writes the code.</dd></div>
+        <div class="row"><dt>What can it see?</dt><dd>The folder you start it in. It asks before changing anything.</dd></div>
+        <div class="row"><dt>Is Hallmark free?</dt><dd>Yes, under the MIT licence.</dd></div>
+        <div class="row"><dt>Can Hallmark make slides?</dt><dd>It builds web pages, so this one scrolls.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="start" aria-labelledby="start-title">
+    <div class="container close">
+      <div class="head" style="margin:0">
+        <h2 id="start-title">Two lines to start</h2>
+        <p class="lead">Then type <code>/hallmark</code> and describe a page.</p>
+      </div>
+      <div class="cmds">
+        <div class="cmd-chip cut"><code id="cmd-claude">npm install -g @anthropic-ai/claude-code</code><button class="key key--small" type="button" data-copy="cmd-claude">Copy</button></div>
+        <div class="cmd-chip cut"><code id="cmd-hallmark">npx skills add nutlope/hallmark -g</code><button class="key key--small" type="button" data-copy="cmd-hallmark">Copy</button></div>
+        <p class="note copy-status" aria-live="polite">Both need Node 18 or later.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <p class="wordmark">Claude Code at home</p>
+    <p>Built with Hallmark v2.0.0 in Cobalt. Pictures and lint output come from the Hallmark repository. More at <a href="https://www.usehallmark.com" rel="noopener">usehallmark.com</a> and <a href="https://claude.ai/code" rel="noopener">claude.ai/code</a>.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // copy keys: write on click, fall back to selecting the text
+  document.querySelectorAll('[data-copy]').forEach((btn) => {
+    const src = document.getElementById(btn.dataset.copy);
+    const status = btn.closest('.term__foot, .cmds').querySelector('.copy-status');
+    const label = btn.textContent;
+    btn.addEventListener('click', () => {
+      const text = src.textContent.trim();
+      const done = (msg) => { status.textContent = msg; btn.textContent = msg.startsWith('Copied') ? 'Copied' : label; setTimeout(() => { btn.textContent = label; }, 1600); };
+      const select = () => { const r = document.createRange(); r.selectNodeContents(src); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected. Press Ctrl+C or Cmd+C to copy.'); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(() => done('Copied: ' + text), select);
+      else select();
+    });
+  });
+
+  // the bar tucks away on the way down and returns on the way up
+  const bar = document.querySelector('[data-bar]');
+  let lastY = scrollY, ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      const y = scrollY;
+      bar.classList.toggle('is-tucked', y > lastY && y > 400 && !bar.contains(document.activeElement));
+      lastY = y; ticking = false;
+    });
+  }, { passive: true });
+
+  // pinned: each panel lights its lines in the lint output
+  const lint = document.querySelector('[data-lint]');
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) lint.dataset.step = e.target.dataset.step; }), { rootMargin: '-45% 0px -45% 0px' });
+  document.querySelectorAll('.panel[data-step]').forEach((p) => io.observe(p));
+  lint.dataset.step = 'fail';
+
+  // the field: one still of characters on an 8 by 16 cell, settling toward the foot of the hero
+  const hero = document.querySelector('.hero'), cv = hero.querySelector('.field'), text = hero.querySelector('.hero__text'), term = hero.querySelector('.term');
+  const ramp = ' .:-=+*#%@';
+  const css = getComputedStyle(document.documentElement);
+  const tints = ['--color-glyph-1', '--color-glyph-2', '--color-glyph-3', '--color-glyph-4', '--color-accent-deep'].map((t) => css.getPropertyValue(t).trim());
+  const hash = (x, y) => { const s = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return s - Math.floor(s); };
+  const noise = (x, y) => { const xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi; const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf); const a = hash(xi, yi), b = hash(xi + 1, yi), c = hash(xi, yi + 1), d = hash(xi + 1, yi + 1); return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v; };
+  const draw = () => {
+    const r = hero.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
+    cv.width = r.width * dpr; cv.height = r.height * dpr;
+    const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, r.width, r.height);
+    g.font = '12px "JetBrains Mono", ui-monospace, monospace'; g.textBaseline = 'top';
+    const pad = 24, keep = [text, term].map((el) => { const b = el.getBoundingClientRect(); return [b.left - r.left - pad, b.top - r.top - pad, b.right - r.left + pad, b.bottom - r.top + pad]; });
+    for (let y = 0; y < r.height; y += 16) for (let x = 0; x < r.width; x += 8) {
+      if (keep.some(([a, b, c, d]) => x > a && x < c && y > b && y < d)) continue;
+      const foot = Math.max(0, (y / r.height - 0.55) / 0.45);
+      const n = noise(x / 90, y / 60) * 0.7 + noise(x / 23, y / 19) * 0.3;
+      const v = n * foot * 1.35;
+      if (v < 0.18) continue;
+      const i = Math.min(ramp.length - 1, Math.floor(v * ramp.length));
+      g.fillStyle = tints[Math.min(tints.length - 1, Math.floor(v * 4))];
+      g.fillText(ramp[i], x, y);
+    }
+  };
+  let t; const redraw = () => { clearTimeout(t); t = setTimeout(draw, 120); };
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(draw);
+  addEventListener('resize', redraw);
+})();
+</script>
